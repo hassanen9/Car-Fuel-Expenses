@@ -1,4 +1,9 @@
-h2
-{
-    color: red;
-}
+caption {
+    font-family: "Rock Salt", cursive;    
+    padding: 25px;
+    font-style: italic;
+    caption-side: top;
+    color: blue;
+    text-align: right;
+    letter-spacing: 0.1px;
+  }

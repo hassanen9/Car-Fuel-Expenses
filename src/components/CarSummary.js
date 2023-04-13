@@ -32,12 +32,31 @@ const CarSummary = () => {
 
         return (
           <div key={car} className="car-summary-item">
-            <h3>{car}</h3>
-            <p>Total Sum: {data.totalSum.toFixed(2)} €</p>
-            <p>Total Liters: {data.totalLiters.toFixed(2)} L</p>
-            <p>Total Distance: {data.totalDistance.toFixed(2)} km</p>
-            <p>Average Expenses per 100 km: {averageExpensesPer100Km.toFixed(2)} €</p>
-            <p>Average Consumption per 100 km: {averageConsumptionPer100Km} L</p>
+            <table>
+              <caption>
+              Total refueling expenses by the car {car} 
+              </caption>
+            <tr>
+              <th scope='row'>Total Sum</th>
+              <td> {data.totalSum.toFixed(2)} €</td>
+            </tr>
+            <tr>
+              <th scope='row'>Total Liters</th>
+              <td> {data.totalLiters.toFixed(2)} L</td>
+            </tr>
+            <tr>
+              <th scope='row'>Total Distance</th>
+              <td> {data.totalDistance.toFixed(2)} km</td>
+            </tr>
+            <tr>
+              <th scope='row'>Average Expenses per 100 km</th>
+              <td> {averageExpensesPer100Km.toFixed(2)} €</td>            
+            </tr>
+            <tr>
+              <th scope='row'>Average Consumption per 100 km</th>
+              <td> {averageConsumptionPer100Km.toFixed(2)} L</td>
+            </tr>    
+            </table>                   
           </div>
         );
       })}
