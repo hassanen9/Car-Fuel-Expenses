@@ -13,15 +13,34 @@ const TotalSummary = () => {
   const averageConsumptionPer100Km =
     totalLiters > 0 ? (totalLiters / totalDistance) * 100 : 'N/A';
 
-  return (
+  return (    
     <div className="total-summary">
-      <h2>Total Summary</h2>
-      <p>Total Sum: {totalSum.toFixed(2)} €</p>
-      <p>Total Liters: {totalLiters.toFixed(2)} L</p>
-      <p>Total Distance: {totalDistance.toFixed(2)} km</p>
-      <p>Average Expenses per 100 km: {averageExpensesPer100Km.toFixed(2)} €</p>
-      <p>Average Consumption per 100 km: {averageConsumptionPer100Km} L</p>
-    </div>
+            <table>
+              <caption>
+              Total refueling expenses by all cars
+              </caption>
+            <tr>
+              <th scope='row'>Total Sum</th>
+              <td> {totalSum.toFixed(2)} €</td>
+            </tr>
+            <tr>
+              <th scope='row'>Total Liters</th>
+              <td> {totalLiters.toFixed(2)} L</td>
+            </tr>
+            <tr>
+              <th scope='row'>Total Distance</th>
+              <td> {totalDistance.toFixed(2)} km</td>
+            </tr>
+            <tr>
+              <th scope='row'>Average Expenses per 100 km</th>
+              <td> {averageExpensesPer100Km.toFixed(2)} €</td>            
+            </tr>
+            <tr>
+              <th scope='row'>Average Consumption per 100 km</th>
+              <td> {averageConsumptionPer100Km.toFixed(2)} L</td>
+            </tr>    
+            </table>             
+        </div>
   );
 };
 

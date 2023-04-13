@@ -1,0 +1,10 @@
+caption 
+{
+    font-family: "Rock Salt", cursive;    
+    padding: 25px;
+    font-style: italic;
+    caption-side: top;
+    color: red;
+    text-align: center;
+    letter-spacing: 0.1px;
+  }

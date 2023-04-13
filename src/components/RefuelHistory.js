@@ -8,13 +8,27 @@ const RefuelHistory = () => {
   return (
     <div className="refuel-history">
       <h2>Refueling History</h2>
-      <ul>
+      <table className='positioned'>
+        <caption>
+          Refueling Histroy of all cars
+        </caption>
+        <thead>
+          <th scope='col'>Car name</th>
+          <th scope='col'>Liters</th>
+          <th scope='col'>Price</th>
+          <th scope='col'>Distance</th>
+        </thead>
+        <tbody>
         {expenses.map((expense, index) => (
-          <li key={index}>
-            {expense.car}: {expense.liters} L - {expense.price}€ - {expense.distance} km
-          </li>
+          <tr key={index}>
+            <td>{expense.car}</td>
+            <td>{expense.liters} L</td>
+            <td>{expense.price}€</td>
+            <td>{expense.distance} km</td>
+          </tr>
         ))}
-      </ul>
+        </tbody>
+      </table>      
     </div>
   );
 };

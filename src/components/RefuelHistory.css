@@ -1,4 +1,14 @@
-h2
+table 
 {
-    color: red;
-}
+    table-layout: fixed;
+    width: 100%;
+    border: 1px solid red;
+  }
+  
+td 
+{
+    border: 1px solid blue;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
