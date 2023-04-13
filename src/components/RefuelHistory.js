@@ -13,10 +13,13 @@ const RefuelHistory = () => {
           Refueling Histroy of all cars
         </caption>
         <thead>
+          <tr> 
           <th scope='col'>Car name</th>
           <th scope='col'>Liters</th>
           <th scope='col'>Price</th>
           <th scope='col'>Distance</th>
+          </tr>
+         
         </thead>
         <tbody>
         {expenses.map((expense, index) => (

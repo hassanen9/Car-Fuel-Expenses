@@ -36,6 +36,7 @@ const CarSummary = () => {
               <caption>
               Total refueling expenses by the car {car} 
               </caption>
+            <tbody>
             <tr>
               <th scope='row'>Total Sum</th>
               <td> {data.totalSum.toFixed(2)} €</td>
@@ -55,7 +56,8 @@ const CarSummary = () => {
             <tr>
               <th scope='row'>Average Consumption per 100 km</th>
               <td> {averageConsumptionPer100Km.toFixed(2)} L</td>
-            </tr>    
+            </tr>
+            </tbody>    
             </table>                   
           </div>
         );
