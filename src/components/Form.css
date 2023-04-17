@@ -1,0 +1,31 @@
+label
+ {
+    color: blue;
+  padding: 12px;
+ }
+
+ input[type=number]:focus {
+    border: 3px solid #555;
+  }
+
+ input[type=number] {
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    width: 30%;
+  }
+
+ button
+ {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+ }

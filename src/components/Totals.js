@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { GlobalContext } from '../context/GlobalState';
-
+import './Totals.css';
 
 const Totals = () => {
   const { refuelings } = useContext(GlobalContext);
@@ -28,16 +28,35 @@ const Totals = () => {
   }, {});
 
   return (
-    <div>
-      <h3>Totals</h3>
-      <div>
-        <h4>All Cars:</h4>
-        <p>Total sum: {totalSum.toFixed(2)}€</p>
-        <p>Total consumption: {totalConsumption.toFixed(2)} L</p>
-        <p>Total distance: {totalDistance.toFixed(2)} km</p>
-        <p>Average expenses per 100 km: {avgExpensePer100Km.toFixed(2)}€</p>
-        <p>Average consumption per 100 km: {avgConsumptionPer100Km.toFixed(2)} L</p>
-      </div>
+    <div>      
+      <table>
+              <caption>
+              Total refueling expenses by all cars
+              </caption>
+            <tbody>
+            <tr>
+              <th scope='row'>Total Sum</th>
+              <td> {totalSum.toFixed(2)} €</td>
+            </tr>
+            <tr>
+              <th scope='row'>Total consumption</th>
+              <td> {totalConsumption.toFixed(2)} L</td>
+            </tr>
+            <tr>
+              <th scope='row'>Total Distance</th>
+              <td> {totalDistance.toFixed(2)} km</td>
+            </tr>
+            <tr>
+              <th scope='row'>Average Expenses per 100 km</th>
+              <td> {avgExpensePer100Km.toFixed(2)} €</td>            
+            </tr>
+            <tr>
+              <th scope='row'>Average Consumption per 100 km</th>
+              <td> { avgConsumptionPer100Km.toFixed(2) } L</td>
+            </tr>
+            </tbody>    
+          </table>
+
       {Object.keys(carTotals).map((carName) => {
         const carTotal = carTotals[carName];
         const carAvgExpensePer100Km = carTotal.totalSum / carTotal.totalDistance * 100;
@@ -45,12 +64,34 @@ const Totals = () => {
 
         return (
           <div key={carName}>
-            <h4>{carName}:</h4>
-            <p>Total sum: {carTotal.totalSum.toFixed(2)}€</p>
-            <p>Total consumption: {carTotal.totalConsumption.toFixed(2)} L</p>
-            <p>Total distance: {carTotal.totalDistance.toFixed(2)} km</p>
-            <p>Average expenses per 100 km: {carAvgExpensePer100Km.toFixed(2)}€</p>
-            <p>Average consumption per 100 km: {carAvgConsumptionPer100Km.toFixed(2)} L</p>
+            <table>
+              <caption>
+              Total refueling expenses by the car {carName} 
+              </caption>
+            <tbody>
+            <tr>
+              <th scope='row'>Total Sum</th>
+              <td> {carTotal.totalSum.toFixed(2)} €</td>
+            </tr>
+            <tr>
+              <th scope='row'>Total Consumption</th>
+              <td> {carTotal.totalConsumption.toFixed(2)} L</td>
+            </tr>
+            <tr>
+              <th scope='row'>Total Distance</th>
+              <td> {carTotal.totalDistance.toFixed(2)} km</td>
+            </tr>
+            <tr>
+              <th scope='row'>Average Expenses per 100 km</th>
+              <td> {carAvgExpensePer100Km.toFixed(2)} €</td>            
+            </tr>
+            <tr>
+              <th scope='row'>Average Consumption per 100 km</th>
+              <td> {carAvgConsumptionPer100Km.toFixed(2)} L</td>
+            </tr>
+            </tbody>    
+            </table>            
+            
           </div>
         );
       })}

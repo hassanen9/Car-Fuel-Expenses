@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react';
 import { GlobalContext } from '../context/GlobalState';
-
 import { v4 as uuidv4 } from 'uuid';
+import './Form.css'
 
 const Form = () => {
   const [carName, setCarName] = useState('');
@@ -29,40 +29,48 @@ const Form = () => {
 
   return (
     <div>
-      <form onSubmit={onSubmit}>
+      <form onSubmit={onSubmit}>¨
+        <label for="carName">Car Name:</label>
         <input
-          type="text"
+          type="text"          
           value={carName}
           onChange={(e) => setCarName(e.target.value)}
           placeholder="Car Name"
           required
         />
-        <input
-          type="number"
-          value={quantity}
-          onChange={(e) => setQuantity(e.target.value)}
-          placeholder="Quantity of refueling"
-          required
-        />
-        <input
-          type="number"
-          value={price}
-          onChange={(e) => setPrice(e.target.value)}
-          placeholder="Price of refueling"
-          required
-        />
-        <input
-          type="number"
-          value={distance}
-          onChange={(e) => setDistance(e.target.value)}
-          placeholder="Distance driven"
-          required
-        />
+        <label for="carType">Car Type:</label>
         <select value={carType} onChange={(e) => setCarType(e.target.value)}>
           <option value="gasoline">Gasoline</option>
           <option value="diesel">Diesel</option>
           <option value="electric">Electric</option>
         </select>
+        <label for="quantity">Quantity of refueling:</label>
+        <input
+          type="number"
+          value={quantity}
+          onChange={(e) => setQuantity(e.target.value)}
+          placeholder="Quantity of refueling"
+          min={0}
+          required
+        />
+        <label for="price">Total price:</label>
+        <input
+          type="number"
+          value={price}
+          onChange={(e) => setPrice(e.target.value)}
+          placeholder="Price of refueling"
+          min={0}
+          required
+        />
+        <label for="distance">Distance driven:</label>
+        <input
+          type="number"
+          value={distance}
+          onChange={(e) => setDistance(e.target.value)}
+          placeholder="Distance driven"
+          min={0}
+          required
+        />        
         <button type="submit">Add Refueling Expense</button>
       </form>
     </div>

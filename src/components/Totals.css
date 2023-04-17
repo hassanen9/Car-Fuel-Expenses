@@ -1,0 +1,31 @@
+caption 
+{
+    font-family: "Rock Salt", cursive;    
+    padding: 25px;
+    font-style: italic;
+    caption-side: top;
+    color: red;
+    text-align: center;
+    letter-spacing: 0.1px;
+  }
+
+  table 
+{
+    table-layout: fixed;
+    width: 100%;
+    border: 1px solid red;
+  }
+  
+td 
+{
+    border: 1px solid blue;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-align: center;
+  }
+
+  h3, h1 
+  {
+    text-align: center;
+  }
