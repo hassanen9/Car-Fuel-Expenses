@@ -49,7 +49,6 @@ const Form = () => {
           type="number"
           value={quantity}
           onChange={(e) => setQuantity(e.target.value)}
-          placeholder="Quantity of refueling"
           min={0}
           required
         />
@@ -58,7 +57,6 @@ const Form = () => {
           type="number"
           value={price}
           onChange={(e) => setPrice(e.target.value)}
-          placeholder="Price of refueling"
           min={0}
           required
         />
@@ -67,7 +65,6 @@ const Form = () => {
           type="number"
           value={distance}
           onChange={(e) => setDistance(e.target.value)}
-          placeholder="Distance driven"
           min={0}
           required
         />        
